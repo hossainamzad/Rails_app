@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yankees</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= flash[:notice] if flash[:notice] %>
+<nav>
+
+	
+	<p><%= link_to "Home", users_path %></p>
+	<p><%= link_to "Posts", posts_path %></p>
+	<p><%= link_to "Log Out", log_out_path, method: :delete %></p>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>

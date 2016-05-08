@@ -1,0 +1,41 @@
+<!-- <h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+<% @users.each do |user|%>
+	<p><%= user.username%></p>
+<% end %> -->
+<div class="wraper">
+	<div class="header">
+
+	<h2>I am a Blog</h2>
+	</div>
+	<div class="login">
+	<h3>Log In</h3>
+
+	<%= form_tag log_in_path do %> 
+	<%= label_tag :email %>
+	<%= text_field_tag :email %>
+	</br></br>
+
+	<%= label_tag :password %>
+	<%= text_field_tag :password%>
+	</br></br>
+
+	<%= submit_tag value="Log In" %>
+
+	<% end %>
+	</div>
+	<div class="signin">
+	<h3>New User, please: </h3>
+	<%=link_to "Sign In", new_user_path %>
+	</div>
+</div>
+
+
+
+
+
+<!-- <p>This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.This is our blog.</p> -->
+
+
+

@@ -1,0 +1,50 @@
+<h1>Post here: </h1>
+
+
+
+<%= form_for @post do |f| %>
+
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :body %>
+    <br>
+    <%= f.text_field :body %>
+    <br>
+   <%= f.submit %>
+<% end %>
+
+<% @posts.each do |post| %>
+    <div class="posts">
+        <div class="comment-name">
+            <h2>
+                <% by = session[:username] %>
+                <%= by %>
+            </div>
+                <br>
+                "<%= post.body%>"
+                <br>
+                <br>
+            </h2>
+        <% comments = post.comments %>
+        <%comments.each do |comment| %>
+        <div class="comments-posts">
+            <h4>    
+                <%= by %>
+                <br>
+                    <%= comment.body %>
+                <br>
+        </div>
+            <% end %>
+            </h4>
+            <b>Leave a comment:</b>
+            <br>
+            <%= form_for Comment.new do |f| %>
+                <%= f.hidden_field :post_id,  value: post.id%>
+                <%= f.text_field :body %>
+                
+                <%= f.submit %>
+            <% end %>    
+</div>
+    <% end %>

@@ -1,0 +1,18 @@
+<%= form_for @post do |f| %>
+
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :body %>
+    <br>
+    <%= f.text_field :body %>
+    <br>
+   <%= f.submit :update %>
+<% end %>
+
+<br>
+
+<br>
+
+<%= button_to "Delete", post_path(@post), method: :delete%>
